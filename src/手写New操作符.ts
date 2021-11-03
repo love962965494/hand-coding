@@ -24,10 +24,13 @@ function New(func: (...args: any[]) => void, ...args: any[]) {
 }
 
 /****************** Test ****************/
-/// <reference path="person.d.ts" />
-const PersonImpl = function (name, age) {
+function Person(name: string, age: number) {
   this.name = name
   this.age = age
 }
 
-const person = new PersonImpl('HHH', 12)
+const person1 = New(Person, 'HHH', 13)
+const person2 = new Person('HHH', 13)
+
+console.log('person1: ', person1)
+console.log('person2: ', person2)
